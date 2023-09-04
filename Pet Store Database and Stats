@@ -1,0 +1,37 @@
+-- Create a store database
+
+
+CREATE TABLE pet_store(id INTEGER PRIMARY KEY, item TEXT, price INTEGER, aisle INTEGER, popularity INTEGER);
+
+INSERT INTO pet_store VALUES
+(1, "dog food", 10, 7 ,95),
+(2, "bed", 15, 4, 50),
+(3, "shampoo" , 8, 2, 80),
+(4, "bird feed", 10, 7, 45),
+(5, "water", 5, 7, 96),
+(6, "collar", 9, 1, 61),
+(7, "cat food", 10, 7, 95),
+(8, "litter", 9, 4, 98),
+(9, "catnip", 12, 7, 20),
+(10, "litter scoop", 15, 8, 10),
+(11, "fish food", 10, 7, 67),
+(12, "aquarium", 50, 10, 15),
+(13, "filter", 20, 10, 12),
+(14, "aquarium bulb", 9, 10, 18),
+(15, "toy", 17, 3, 38);
+
+--display the database ordered by price. 
+
+SELECT * FROM pet_store ORDER BY price desc;
+
+--What is the MAX priced item in the store?
+
+select item, MAX(price) FROM pet_store;
+
+--what are the 5 most popular items?
+
+SELECT item, price, popularity FROM pet_store
+ORDER BY popularity desc LIMIT 5;
+
+
+
